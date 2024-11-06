@@ -3,6 +3,7 @@
 # Work based on file by "Gentoo Authors", 2022
 # Modified for Artix Linux by dreieck, 2023
 # Modified for Artix Linux by Daniel Chan, 2024
+# Modified for Artix Linux by Stella, 2024
 # Distributed under the terms of the GNU General Public License v2
 
 USER="`id -nu ${RC_RUNLEVEL}`"
@@ -16,7 +17,7 @@ command_user="${USER}:${USER}"
 pidfile="${PIPEWIRE_RUNTIME_DIR}/pipewire.pid"
 
 depend() {
-  after udev dbus
+  after udev dbus sddm
   use alsasound pulseaudio
 }
 
