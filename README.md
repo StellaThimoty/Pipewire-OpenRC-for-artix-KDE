@@ -14,6 +14,7 @@ pipewire-pulse
 wireplumber
 ```
 NOTE: Out of these, you should have `pipewire` and `wireplumber` already installed. Install `pipewire-pulse`; If it complains about pulseaudio packages, remove those.
+
 **Mechanism**
 
 After login, PAM would change the runlevel to user runlevel by UID.
@@ -22,6 +23,7 @@ It will await the session to be started and export `DBUS_SESSION_BUS_ADDRESS` to
 
 
 **File Structure**
+
 NOTE: All files except user-dbus.desktop should be executable.
 
 `/etc/init.d/pipewire`
@@ -39,6 +41,7 @@ NOTE: All files except user-dbus.desktop should be executable.
 `~/.config/autostart/user-dbus.desktop`
 
 **Setup**
+
 *create runlevel by user ID (e.g. default UID is 1000, can check it by `$ echo $UID`)*
 
 `# mkdir /etc/runlevels/1000`
