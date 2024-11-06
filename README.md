@@ -1,6 +1,10 @@
 This repo contains scripts for Artix to start pipewire, pipewire-pulse and wireplumber from openrc.
 This is just for my own user and I am not going to support it. But you are free to fork it to make it better.
 
+EDIT: Thank you very much for the scripts! I found an issue regarding KDE (SDDM) enviroments that caused instability (pipewire cannot start before the login manager starts) and since open-rc starts processes in parallel, you can see where this is going. The changes are very simple, add the `sddm` service as a dependency to the `pipewire` service, and that should make everything work smoothly.
+
+If you are encountering similar issues, try adding your login manager (SDDM, LXDM, GDM, whatever) as a dependency and that should make it work flawlessly.
+
 **Prerequisite**
 
 Pipewire
